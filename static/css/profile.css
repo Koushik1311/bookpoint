@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --navbar-fonts: "Roboto", sans-serif;
+    --small-text-fonts: 'Lato', sans-serif;
+    --title-text-fonts: 'Merriweather', serif;
+    --very-dark-gray: #404040; /* For Button */
+    --light-red: #ff6162; /* Hover */
+    --very-darker-gray: #333333; /* Links */
+}
+
+.profile-container {
+    display: flex;
+}
+
+.profile-container > *:nth-child(1) {
+    flex: 1 1 20%;
+}
+
+.profile-container > *:nth-child(2) {
+    flex: 1 1 1%;
+}
+
+.profile-container > *:nth-child(3) {
+    flex: 1 1 79%;
+}
+
+.profile-container .left-pro h3 {
+    margin: 4rem 0;
+}
+
+.left-pro h3 a:hover {
+
+    color: var(--light-red);
+}
+
+.pro-email,
+.pro-username,
+.pro-first,
+.pro-last,
+.pro-gender,
+.pro-birthday {
+    font-family: var(--small-text-fonts);
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.pro-email span,
+.pro-username span,
+.pro-first span,
+.pro-last span,
+.pro-gender span,
+.pro-birthday span {
+    font-weight: 700;
+}
+
+.edit-profile-link {
+    margin: 25px 0 0 20px;
+}

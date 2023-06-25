@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Book{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/edetails.css' %}">
+  <link rel="stylesheet" href="{% static 'css/search.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bookedit.css' %}">
+  <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bookdetail.css' %}">
+  <link rel="stylesheet" href="{% static 'css/addproduct.css' %}">
+  <link rel="stylesheet" href="{% static 'css/editprofile.css' %}">
+  <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/store.css' %}">
+  <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+  <script src="https://kit.fontawesome.com/02df8ae39b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <script type="text/javascript">
+    var user = '{{request.user}}'
+
+    function getToken(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+    }
+    return cookieValue;
+    }
+    const csrftoken = getToken('csrftoken');
+  </script>
+</head>
+<body>
+  <header>
+    <a href="{% url 'home' %}"><img src="{% static 'images/css/logo.png' %}" alt="" class="logo"></a>
+    <nav>
+      <ul class="nav_links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'old_store' %}">Old Books</a></li>
+        <li><a href="{% url 'estore' %}">eBooks</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="right-nav">
+      <a href="{% url 'cart' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+      <!-- <p id="cart-total">{{cartItems}}</p> -->
+      {% if user.is_authenticated %}
+        <img class="user-img" onclick="menuToggle();" src="{% static 'images/icons/user.png' %}" alt="">
+        <div class="dropdown-menu">
+          <h3>Account</h3>
+          <hr>
+          <ul>
+            <li><img src="{% static 'images/icons/profile.png' %}" alt=""><a href="{% url 'profile' user.pk %}">My Profile</a></li>
+            <li><img src="{% static 'images/icons/edit.png' %}" alt=""><a href="{% url 'edit-profile' %}">Edit Profile</a></li>
+            <li><img src="{% static 'images/icons/plus.png' %}" alt=""><a href="{% url 'add_product' %}">Add Product</a></li>
+            <li><img src="{% static 'images/icons/padlock.png' %}" alt=""><a href="{% url 'change_password' %}">Change Passwod</a></li>
+            <li><img src="{% static 'images/icons/logout.png' %}" alt=""><a href="{% url 'logout' %}">logout</a></li>
+          </ul>
+        </div>
+      {% else %}
+      <a href="{% url 'login' %}"><button>Log In</button></a>
+      {% endif %}
+    </div>
+    
+    <!-- <i class="fa-solid fa-user"></i> -->
+  </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h1>Online Book Store</h1>
+          <h4>Address: </h4>
+          <p>Sewli Telini Para, SH 1, Malir Math, Barrackpore, West Bengal 700121</p>
+          <h4>Phone: </h4>
+          <p>+919564248765</p>
+          <h4>Email: </h4>
+          <p>suport@onlinebookstore.com</p>
+        </div>
+        <div class="footer-col2">
+          <a href="{% url 'home' %}">Home</a><br><br>
+          <a href="{% url 'contact' %}">Contact</a><br><br>
+          <a href="{% url 'about' %}">About Us</a><br><br>
+        </div>
+        <div class="footer-col3">
+          <a href="{% url 'old_store' %}">Old Books</a><br><br>
+          <a href="{% url 'estore' %}">eBooks</a><br><br>
+        </div>
+        <div class="footer-col4">
+          <form method="post">
+            <div class="input-container email">
+              <input id="email" name="email" type="email" placeholder="Email">
+            </div>
+          <button class="sub-btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copy-right"><p>Copyright © 2021 Online Book Store. All Right Reserved.</p></div>
+    </footer>
+  
+  <script src="{% static 'js/cart.js' %}"></script>
+
+
+  <script>
+    function menuToggle(){
+      const toggleMenu = document.querySelector('.dropdown-menu');
+      toggleMenu.classList.toggle('active')
+    }
+  </script>
+</body>
+</html>

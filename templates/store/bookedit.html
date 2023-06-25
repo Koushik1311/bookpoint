@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Edit{% endblock %}
+{% block content %}
+{% if user.username == product.username %}
+<form method="post">
+    {% csrf_token %}
+    <div class="book-edit-form">{{form.as_p}}</div>
+    <button type="submit" class="book-edit-btn">Update</button>
+</form>
+{% endif %}
+{% endblock%}

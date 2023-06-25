@@ -1,0 +1,33 @@
+.detail-flex {
+    margin-top: 40px;
+}
+
+.detail-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail-sidebar > *:nth-child(1) {
+    flex: 1 1 70%;
+    min-width: 40ch;
+}
+
+.detail-sidebar > *:nth-child(2) {
+    flex: 1 1 30%;
+    min-width: 15ch;
+}
+
+.detail-image {
+    float: left;
+    margin-right: 50px;
+}
+
+.detail-title {
+    font-size: large;
+    font-weight: bold;
+    margin: 5px 0px 2px 0px;
+}
+
+.detail-author {
+    font-size: small;
+}

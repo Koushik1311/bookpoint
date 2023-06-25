@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+{% block title %}eBooks{% endblock %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="store-container">
+        <div class="left">
+            <div class="search-container">
+                <div class="elements-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search" name="search" class="search" id="">
+                    </div>
+                    <div class="search-icon">
+                        <a href="#"><span class="material-symbols-outlined">search</span></a>
+                    </div>   
+                </div>
+            </div>
+            <div class="categorie-list">
+                <h3>Categories</h3>
+                <div class="lst">
+                    {% for category in categories %}
+                    <div class="cat"><a href="{% url 'old_store' %}?category={{category.name}}">{{category.name}}</a><hr></div>
+                    {% endfor %}
+                    <div class="cat"><a href="#">View All</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="vr"></div>
+        <div class="right">
+            {% for product in products %}
+            <div class="book-item">
+                <a href="{% url 'ebook_detail' product.pk %}"><img src="{{product.imageURL}}" alt=""></a>
+                <div class="categori">ebook</div>
+                <hr>
+                <a href="{% url 'ebook_detail' product.pk %}"><h4>{{product.name}}</h4></a>
+                <h6>By: {{product.author}}</h6>
+                <div class="money">Rs. {{product.price}}</div>
+                <a href="{{product.file.url}}" download="{{product.file.url}}"><button class="add-btn" >Purches</button></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

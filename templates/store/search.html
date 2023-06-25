@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+{% block title %}Search{% endblock %}
+{% load static %}
+{% block content %}
+<div class="container">
+    {% if searched %}
+        {% for book in books %}
+        <div class="search-item">
+            <a href="{% url 'book_detail' book.pk %}"><img src="{{book.imageURL}}" alt=""></a>
+            <div class="categori">{{book.category}}</div>
+            <hr>
+            <a href="{% url 'book_detail' book.pk %}"><h4>{{book.name}}</h4></a>
+            <h6>By: {{book.author}}</h6>
+            <div class="moneyq">Rs. {{book.price}}</div>
+            <button data-product="{{book.id}}" data-action="add" class="add-btn" >Add To Cart</button>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
+
+
+
+
+
+

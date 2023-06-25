@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+{% block title %}{{product.name}}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="detail-container">
+        <div class="left-img">
+            <img src="{{product.imageURL}}">
+        </div>
+        <div class="right-detail">
+            <div class="name-d">{{product.name}}</div>
+            <div class="author-d">By: {{product.author}}</div>
+            <div class="price-d">Rs. {{product.price}}</div>
+            <div class="category-d">{{product.category}}</div>
+            <div class="condition-d">{{product.condition}}</div>
+            <div class="description-d">{{product.description}}</div>
+            <button data-product="{{product.id}}" data-action="add" class="add-btn" >Add To Cart</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

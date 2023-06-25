@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+    <script src="https://kit.fontawesome.com/02df8ae39b.js" crossorigin="anonymous"></script>
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="split-screen">
+        <div class="left">
+            <section class="copy">
+                <h1>Explore the world of books</h1>
+                <p>Over 100 kinds of books to choose from. </p>
+            </section>
+        </div>
+        <div class="right">
+            <form method="post">
+                {% csrf_token %}
+                <section class="copy">
+                    <h2>Sign Up</h2>
+                </section>
+                <div class="auto-user">
+                    {{form.user}}
+                </div>
+                <div class="input-container phone_number">
+                    <label for="phone_number">Phone Number</label>
+                    <input id="phone_number" name="phone_number" type="phone_number">
+                </div>
+                <button class="signup-btn" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var name = "{{ user.id }}";
+        document.getElementById("id_user").value = name;
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %}Cart {% endblock %}
+{% block content %}
+<div class="cart-head">
+    <header class="menu">
+        <div class="item-name-menu">Item</div>
+        <div class="menu-list">
+            <ul class="menu-bar">
+                <li>Price</li>
+                <li>Quantity</li>
+                <li>Total</li>
+            </ul>
+        </div>
+    </header>
+</div>
+{% for item in items %}
+<div class="cart-body">
+    <div class="item-name">
+        <img src="{{item.product.imageURL}}" alt="" class="product-image">
+        {{item.product.name}}
+    </div>
+    <div class="list-item">
+        <ul class="list">
+            <li>{{item.product.price|floatformat:2}}</li>
+            <li><div class="quantity">
+                <img data-product="{{item.product.id}}" data-action="remove" class="quantity-update add-btn" src="{% static  'images/icons/minus.png' %}">
+                {{item.quantity}}
+                <img data-product="{{item.product.id}}" data-action="add" class="quantity-update add-btn" src="{% static  'images/icons/plus.png' %}">	
+            </div></li>
+            <li>{{item.get_total|floatformat:2}}</li>
+        </ul>
+    </div>
+</div>
+{% endfor %}
+<div class="cart-bottom">
+    <div class="cart-total">
+        <h5 class="total-items">Items: {{order.get_cart_items}}</h5>
+        <h5 class="total-price">Total: Rs. {{order.get_cart_total|floatformat:2}}</h5>
+    </div>
+    <div class="cart-button">
+        <a href="{% url 'old_store' %}"><button class="cs-button">Continue Shoping</button></a>
+        <a href="{% url 'checkout' %}"><button class="check-button">Checkout</button></a>
+    </div>
+</div>
+
+
+{% endblock%}

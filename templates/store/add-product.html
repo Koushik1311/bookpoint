@@ -1,0 +1,48 @@
+{% extends "base.html"%}
+{% block title %} Add Product {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="add-container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-container username">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text">
+            </div>
+            <div class="input-container name">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text">
+            </div>
+            <div class="input-container author">
+                <label for="author">Author</label>
+                <input id="author" name="author" type="text">
+            </div>
+            <div class="input-container price">
+                <label for="price">Price</label>
+                <input id="price" name="price" type="number">
+            </div>
+            <div class="condition-add">
+                <label for="condition">Condition</label><br>
+                {{form.conditions}}
+            </div>
+            <div class="condition-add category">
+                <label for="category">Category</label><br>
+                {{form.category}}
+            </div>
+            <div class="input-container image">
+                <label for="image">Image</label><br>
+                <input id="image" name="image" type="file" accept="image/*">
+            </div>
+            <div class="input-container description">
+                <label for="description">Description</label>
+                <input id="description" name="description" type="textarea">
+            </div>
+            <button class="add-btn" type="submit">Add</button>
+        </form>
+    </div>
+</div>
+<script>
+    var name = "{{ user.email }}";
+    document.getElementById("email").value = email;
+</script>
+{% endblock%}

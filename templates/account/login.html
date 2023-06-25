@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+    <script src="https://kit.fontawesome.com/02df8ae39b.js" crossorigin="anonymous"></script>
+    <title>Log In</title>
+</head>
+<body>
+    <div class="split-screen">
+        <div class="left">
+            <section class="copy">
+                <h1>Welcome Back</h1>
+                <p>There are lot of books waiting for you.</p>
+            </section>
+        </div>
+        <div class="right">
+            <form method="post">
+                {% csrf_token %}
+                <section class="copy">
+                    <h2>Log In</h2>
+                </section>
+                <div class="input-container email">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email">
+                    <!-- <input type="email" name="email", id="inputEmail" placeholder="Email address" required autofocus> -->
+
+                </div>
+                <div class="input-container password">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <button class="signup-btn" type="submit">Next<i class="fa-solid fa-arrow-right"></i></button>
+                <div class="login-container">
+                    <p>Don't have an account? <a href="{% url 'signup' %}">
+                        Sign Up
+                    </a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+    <!-- <input type="email" name="email", id="inputEmail" placeholder="Email address" required autofocus>
+    <input type="password" name="password" id="inputPassword" placeholder="Password" required>
+    {% for field in login_form %}
+    <p>
+    {% for error in field.errors %}
+    <p style="color:red">{{ error }}</p>
+    {% endfor %}
+    </p>
+    {% endfor %}
+    {% if login_form.non_field_errors %}
+    <div style="color:red">
+    <p>{{ login_form.non_field_errors }}</p>
+    </div>
+    {% endif %}
+    <button type="submit">Log in</button> -->

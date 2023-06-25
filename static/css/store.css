@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --navbar-fonts: "Roboto", sans-serif;
+    --small-text-fonts: 'Lato', sans-serif;
+    --title-text-fonts: 'Merriweather', serif;
+    --very-dark-gray: #404040; /* For Button */
+    --light-red: #ff6162; /* Hover */
+    --very-darker-gray: #333333; /* Links */
+}
+
+.container {
+    margin: 0 5rem;
+}
+
+.store-container {
+    display: flex;
+}
+
+.vr {
+    border-left: 1px solid var(--light-grey);
+    height: auto;
+}
+
+.left .search-container .elements-container .search-icon button {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+} 
+
+.store-container > *:nth-child(1) {
+    flex: 1 1 24%;
+}
+
+.store-container > *:nth-child(2) {
+    flex: 1 1 1%;
+}
+
+.store-container > *:nth-child(3) {
+    flex: 1 1 75%;
+}
+
+.left .search-container {
+    position: relative;
+    width: auto;
+    margin: 0 13px 0 0;
+    height: 42px;
+    border: 2px solid var(--very-dark-gray);
+    padding: 0px 10px;
+    border-radius: 50px;
+}
+
+.left .elements-container {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    display: flex;
+}
+
+.left .search {
+    border: none;
+    height: 100%;
+    will-change: 100%;
+    padding: 0px 5px;
+    border-radius: 50px;
+    font-size: 15px;
+    color: var(--very-dark-gray);
+}
+
+.left .search:focus {
+    outline: none;
+}
+
+.left .elements-container .search-icon {
+    margin: 6px auto;
+    padding: 5px 0;
+}
+
+.left .material-symbols-outlined {
+    font-size: 15px;
+    color: var(--very-dark-gray);
+}
+
+.left .categorie-list {
+    margin: 2em 0;
+    width: 90%;
+}
+
+.left .categorie-list h3 {
+    background-color: var(--very-dark-gray);
+    color: white;
+    padding: 12px 0 12px 25px;
+    border: none;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 200;
+    border-radius: 10px;
+}
+
+.left .categorie-list .lst .cat {
+    margin: 15px;
+    color: var(--very-dark-gray);
+    font-family: var(--small-text-fonts);
+}
+
+.left .cat hr {
+    margin-top: 12px;
+    border: 1px solid var(--light-grey);
+}
+
+.right {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    margin: 0 0 0 25px;
+}
+
+.right .book-item {
+    flex: 0 1 11em;
+    display: flex;
+    flex-direction: column;
+    align-self: normal;
+    height: 500px;
+    /* background-color: aqua; */
+}
+
+.right .book-item img {
+    width: 100%;
+    height: 268px;
+}
+
+.right .book-item .categori {
+    margin: 15px 0 7px 0;
+    color: var(--very-dark-gray);
+}
+
+.right .book-item hr {
+    border: 1px solid var(--light-grey);
+}
+
+.right .book-item h4 {
+    margin-top: auto;
+    padding-top: 20px;
+    transition: all 0.3s ease 0s;
+    font-family: var(--title-text-fonts);
+
+}
+
+.right .book-item h4:hover {
+    cursor: pointer;
+    color: var(--light-red);
+}
+
+.right .book-item h6 {
+    margin-top: auto;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    color: var(--very-dark-gray);
+    font-family: var(--small-text-fonts);
+}
+
+.right .book-item .money {
+    margin-bottom: 1.5rem;
+    color: var(--light-red);
+    font-family: var(--navbar-fonts);
+    font-weight: 700;
+}
+
+.right .book-item .add-btn {
+    display: block;
+    width: 90%;
+    background: white;
+    color: var(--very-darker-gray);
+    cursor: pointer;
+    font-weight: 200;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid var(--very-dark-gray);
+    border-radius: 30px;
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease 0s;
+}
+
+.right .book-item .add-btn:hover {
+    background-color: var(--light-red);
+    color: white;
+    border: 1px solid var(--light-red);
+}
+
+
+
+/* .content-sidebar {
+    display: flex;
+}
+
+.content-sidebar > *:nth-child(1) {
+    flex: 1 1 30%;
+}
+
+.content-sidebar > *:nth-child(2) {
+    flex: 1 1 70%;
+}
+
+
+.content {
+    margin-top: 20px;
+}
+
+.grid-ish {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.grid-ish > * {
+    flex: 0 1 10em;
+}
+
+img, .card-image-book {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 160px;
+}
+
+.body-pos {
+    margin-top: -5px;
+}
+
+.col {
+     border: 1px solid black;
+} */

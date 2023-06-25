@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+:root {
+    --navbar-fonts: "Roboto", sans-serif;
+    --lower-heading-fonts: 'Merriweather', serif;
+    --very-dark-gray: #404040; /* For Button */
+    --light-red: #ff6162; /* Hover */
+    --very-darker-gray: #333333; /* Links */
+    --light-grey: #d0d0d0;
+}
+
+.cart-head header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 7%;
+}
+
+.menu-bar li {
+    display: inline-block;
+    padding: 0px 50px;
+}
+
+
+.cart-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 7%;
+}
+
+.list li {
+    display: inline-block;
+    padding: 0 50px;
+}
+
+.list > *:nth-child(1) {
+    /* color: orange; */
+    margin: 0 1px 0 0;
+
+}
+
+.list > *:nth-child(2) {
+    /* color: orange; */
+    margin: 0 1px 0 0;
+
+}
+
+.list > *:nth-child(3) {
+    /* color: blue; */
+    margin: 0 1px 0 0;
+
+}
+
+.cart-body .list-item .quantity img {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.cart-bottom {
+    margin: 10px 60px;
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px 33px;
+}
+
+.cart-total {
+    margin-bottom: 20px;
+}
+
+.cart-bottom .cart-total h5 {
+    font-size: 15px;
+    font-family: var(--lower-heading-fonts);
+    font-weight: 20;
+    color: var(--very-darker-gray);
+}
+
+.cart-bottom .cart-total .total-price {
+    margin-top: 10px;
+}
+
+.cart-botton {
+    border: none;
+}
+.cart-bottom button {
+    background-color: var(--very-dark-gray);
+    color: var(--light-grey);
+}
+
+button.check-button {
+    float: right;
+}
+
+
+
+
+.flex-menue {
+    display: flex;
+    gap: 1em;
+}
+
+.flex-menue > * {
+    flex: 1 1 15em;
+}
+
+.flex-details {
+    display: flex;
+    gap: 1em;
+    margin-top: 25px;
+}
+
+.flex-details > * {
+    flex: 1 1 15rem;
+}
+

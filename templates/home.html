@@ -1,0 +1,83 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+<div class="slider-box">
+    <div id="slider">
+        <img src="{% static 'images/1.png' %}" alt="">
+        <h1>Get Your Book</h1>
+        <hr>
+        <p>
+            There are many books to explore. <br>
+            Take your time before you decide to buy any book.
+        </p>
+        <a class="ex-old" href="{% url 'old_store' %}"><button>Explore Old Books</button></a>
+        <a class="ex-e" href="{% url 'estore' %}"><button>Explore eBooks</button></a>
+    </div>
+</div>
+<!-- category -->
+<div class="cata-container">
+    <ul class="cata">
+        <li>
+            <a href="{% url 'old_store' %}?category=Photography"><img src="{% static 'images/icons/book.png' %}"><br> <h3>Photography</h3></a>
+        </li>
+        <li>
+            <a href="{% url 'old_store' %}?category=Helth"><img src="{% static 'images/icons/book.png' %}"><br><h3>Helth</h3></a>
+        </li>
+        <li>
+            <a href="{% url 'old_store' %}?category=Fiection"><img src="{% static 'images/icons/book.png' %}"><br><h3>Fiection</h3></a>
+        </li>
+        <li>
+            <a href="{% url 'old_store' %}?category=Biography"><img src="{% static 'images/icons/book.png' %}"><br><h3>Biography</h3></a>
+        </li>
+        <li>
+            <a href="{% url 'old_store' %}?category=Children"><img src="{% static 'images/icons/book.png' %}"><br><h3>Children</h3></a>
+        </li>
+    </ul>
+</div>
+
+<!-- Old Books -->
+<div class="old-book-container-home"><h1>Old Books</h1></div>
+<div class="old-book-home">
+    <div></div>
+    <div class="flex-list"></div>
+    {% for product in product_list %}
+        <div class="book-item">
+            <a href="{% url 'book_detail' product.pk %}"><img src="{{product.imageURL}}" alt=""></a>
+            <div class="categori">{{product.category}}</div>
+            <hr>
+            <a href="{% url 'book_detail' product.pk %}"><h4>{{product.name}}</h4></a>
+            <h6>By: {{product.author}}</h6>
+            <div class="money">Rs. {{product.price}}</div>
+            <button data-product="{{product.id}}" data-action="add" class="add-btn" >Add To Cart</button>
+        </div>
+    {% endfor %}
+</div>
+</div>
+
+<div class="sh-home">
+    <div class="cata-container">
+        <ul class="cata">
+            <li>
+                <img src="{% static 'images/icons/delivery-truck.png' %}"><br> 
+                <h3>Free Shipping</h3>
+                <p>Order over Rs. 3000</p>
+            </li>
+            <li>
+                <img src="{% static 'images/icons/credit-card.png' %}"><br>
+                <h3>Secure Payment</h3>
+                <p>100% Sequre Payment</p>
+            </li>
+            <li>
+                <img src="{% static 'images/icons/tag.png' %}"><br>
+                <h3>Best Price</h3>
+                <p>Guaranted Low Cost</p>
+            </li>
+            <li>
+                <img src="{% static 'images/icons/24-hours.png' %}"><br>
+                <h3>Online Support</h3>
+                <p>24/7 Online Support</p>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock%}

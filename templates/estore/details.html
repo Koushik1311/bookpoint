@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+{% block title %}{{product.name}}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="detail-container">
+        <div class="left-img">
+            <img src="{{ebookmodel.imageURL}}">
+        </div>
+        <div class="right-detail">
+            <div class="name-d">{{ebookmodel.name}}</div>
+            <div class="author-d">By: {{ebookmodel.author}}</div>
+            <div class="price-d">Rs. {{ebookmodel.price}}</div>
+            <div class="category-d">{{ebookmodel.category}}</div>
+            <div class="condition-d">{{ebookmodel.condition}}</div>
+            <div class="description-d">{{ebookmodel.description}}</div>
+            <a href="{{product.file.url}}" download="{{product.file.url}}"><button class="add-btn" >Purches</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

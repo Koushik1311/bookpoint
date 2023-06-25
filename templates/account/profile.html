@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="profile-container">
+        <div class="left-pro">
+            <h3><a href="{% url 'profile' user.pk %}">My Profile</a> </h3>
+            <h3><a href="{% url 'uploaded' %}">Book Uploaded</a></h3>
+        </div>
+        <div class="vr"></div>
+        <div class="right-pro">
+            {% if user.id == current_user.id%}
+            <div class="pro-email"><span class="pro-h">Email:           </span> {{current_user.email}}</div>
+            <div class="pro-username"><span class="pro-h">Username:     </span> {{current_user.username}}</div>
+            <div class="pro-first"><span class="pro-h">First Name:      </span> {{current_user.first_name}}</div>
+            <div class="pro-last"><span class="pro-h">Last Name:        </span> {{current_user.last_name}}</div>
+            <div class="pro-gender"><span class="pro-h"> Gender:        </span> {{current_user.gender}}</div>
+            <div class="pro-birthday"><span class="pro-h">Birthday:     </span> {{current_user.birthday}}</div>
+            <div class="edit-profile-link"> <a href="{% url 'edit-profile' %}"><button>Edit Profile</button></a> </div>
+            {% else %}
+            404 Not Found
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock%}

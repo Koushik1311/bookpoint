@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --navbar-fonts: "Roboto", sans-serif;
+    --small-text-fonts: 'Lato', sans-serif;
+    --title-text-fonts: 'Merriweather', serif;
+    --very-dark-gray: #404040; /* For Button */
+    --light-red: #ff6162; /* Hover */
+    --very-darker-gray: #333333; /* Links */
+}
+
+.slider-box img {
+    width: 100%;
+    height: auto;
+}
+
+
+.slider-box h1 {
+    position: absolute;
+    top: 120px;
+    left: 130px;
+    font-size: 4rem;
+    font-family: var(--title-text-fonts);
+}
+
+.slider-box .ex-old {
+    position: absolute;
+    left: 130px;
+    bottom: 150px;
+}
+
+.slider-box .ex-e {
+    position: absolute;
+    left: 400px;
+    bottom: 150px;
+}
+
+.ex-old button, .ex-e button {
+    width: auto;
+    height: auto;
+    padding: 20px 40px;
+    font-family: var(--navbar-fonts);
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.ex-old button:hover, .ex-e button:hover {
+    border: none;
+    background-color: var(--light-red);
+}
+
+.slider-box hr {
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    background-color: var(--light-red);
+    border: none;
+    top: 220px;
+    left: 130px;
+}
+
+.slider-box p {
+    position: absolute;
+    width: 420px;
+    height: auto;
+    top: 250px;
+    left: 130px;
+    font-family: var(--small-text-fonts);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--very-dark-gray);
+}
+
+.cata-container {
+    margin: 15px 150px;
+}
+
+.cata {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 8rem;
+}
+
+.cata h3 {
+    font-family: var(--title-text-fonts);
+    text-align: center;
+    font-size: 15px;
+}
+
+.cata img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.old-book-container-home {
+    margin: 6rem 0 4rem 0;
+    text-align: center;
+    font-family: var(--title-text-fonts);
+    color: var(--very-darker-gray);
+}
+
+.old-book-home {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    margin: 0 0 0 25px;
+}
+
+.old-book-home .book-item {
+    flex: 0 1 11em;
+    display: flex;
+    flex-direction: column;
+    align-self: normal;
+    height: 500px;
+}
+
+.old-book-home img {
+    width: 100%;
+    height: 268px;  
+}
+
+.old-book-home .book-item .categori {
+    margin: 15px 0 7px 0;
+    color: var(--very-dark-gray);
+}
+
+.old-book-home .book-item hr {
+    border: 1px solid var(--light-grey);
+}
+
+.old-book-home .book-item h4 {
+    margin-top: auto;
+    padding-top: 20px;
+    transition: all 0.3s ease 0s;
+    font-family: var(--title-text-fonts);
+
+}
+
+.old-book-home .book-item h4:hover {
+    cursor: pointer;
+    color: var(--light-red);
+}
+
+.old-book-home .book-item h6 {
+    margin-top: auto;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    color: var(--very-dark-gray);
+    font-family: var(--small-text-fonts);
+}
+
+.old-book-home .book-item .money {
+    margin-bottom: 1.5rem;
+    color: var(--light-red);
+    font-family: var(--navbar-fonts);
+    font-weight: 700;
+}
+
+.old-book-home .book-item .add-btn {
+    display: block;
+    width: 90%;
+    background: white;
+    color: var(--very-darker-gray);
+    cursor: pointer;
+    font-weight: 200;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid var(--very-dark-gray);
+    border-radius: 30px;
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease 0s;
+}
+
+.old-book-home .book-item .add-btn:hover {
+    background-color: var(--light-red);
+    color: white;
+    border: 1px solid var(--light-red);
+}
+
+
+/*  */
+.ebook-container-home {
+    margin: 6rem 0 4rem 0;
+    text-align: center;
+    font-family: var(--title-text-fonts);
+    color: var(--very-darker-gray);
+}
+
+.ebook-home {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    margin: 0 0 0 25px;
+}
+
+.ebook-home .book-item {
+    flex: 0 1 11em;
+    display: flex;
+    flex-direction: column;
+    align-self: normal;
+    height: 500px;
+}
+
+.ebook-home img {
+    width: 100%;
+    height: 268px;  
+}
+
+.ebook-home .book-item .categori {
+    margin: 15px 0 7px 0;
+    color: var(--very-dark-gray);
+}
+
+.ebook-home .book-item hr {
+    border: 1px solid var(--light-grey);
+}
+
+.ebook-home .book-item h4 {
+    margin-top: auto;
+    padding-top: 20px;
+    transition: all 0.3s ease 0s;
+    font-family: var(--title-text-fonts);
+
+}
+
+.ebook-home .book-item h4:hover {
+    cursor: pointer;
+    color: var(--light-red);
+}
+
+.ebook-home .book-item h6 {
+    margin-top: auto;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    color: var(--very-dark-gray);
+    font-family: var(--small-text-fonts);
+}
+
+.ebook-home .book-item .money {
+    margin-bottom: 1.5rem;
+    color: var(--light-red);
+    font-family: var(--navbar-fonts);
+    font-weight: 700;
+}
+
+.ebook-home .book-item .add-btn {
+    display: block;
+    width: 90%;
+    background: white;
+    color: var(--very-darker-gray);
+    cursor: pointer;
+    font-weight: 200;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid var(--very-dark-gray);
+    border-radius: 30px;
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease 0s;
+}
+
+.ebook-home .book-item .add-btn:hover {
+    background-color: var(--light-red);
+    color: white;
+    border: 1px solid var(--light-red);
+}
+
+.sh-home {
+    margin-top: 8rem;
+}
+
+.cata-container .cata p {
+    margin-top: 15px;
+    font-family: var(--small-text-fonts);
+    color: var(--very-dark-gray);
+    font-weight: 600;
+}

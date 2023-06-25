@@ -1,0 +1,56 @@
+{% extends "base.html"%}
+{% block title %}Old Books{% endblock %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="store-container">
+        <div class="left">
+            <form action="{% url 'search' %}" method="post">
+                {% csrf_token %}
+            <div class="search-container">
+                
+                <div class="elements-container">
+                    
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search" name="searched" class="search" id="">
+                    </div>
+                    <div class="search-icon">
+                        <button><span class="material-symbols-outlined">search</span></button>
+                    </div> 
+                      
+                </div>
+            </div>
+        </form>
+            <div class="categorie-list">
+                <h3>Categories</h3>
+                <div class="lst">
+                    {% for category in categories %}
+                    <div class="cat"><a href="{% url 'old_store' %}?category={{category.name}}">{{category.name}}</a><hr></div>
+                    {% endfor %}
+                    <div class="cat"><a href="#">View All</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="vr"></div>
+        <div class="right">
+            {% for product in products %}
+            <div class="book-item">
+                <a href="{% url 'book_detail' product.pk %}"><img src="{{product.imageURL}}" alt=""></a>
+                <div class="categori">{{product.category}}</div>
+                <hr>
+                <a href="{% url 'book_detail' product.pk %}"><h4>{{product.name}}</h4></a>
+                <h6>By: {{product.author}}</h6>
+                <div class="money">Rs. {{product.price}}</div>
+                <button data-product="{{product.id}}" data-action="add" class="add-btn" >Add To Cart</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

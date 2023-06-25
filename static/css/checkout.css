@@ -1,0 +1,91 @@
+:root {
+    --navbar-fonts: "Roboto", sans-serif;
+    --very-dark-gray: #404040; /* For Button */
+    --light-red: #ff6162; /* Hover */
+    --very-darker-gray: #333333; /* Links */
+    --light-grey: #d0d0d0;
+}
+
+.checkout-container {
+    display: flex;
+}
+
+.checkout-container > *:nth-child(1) {
+    flex: 1 1 60%;
+}
+
+.checkout-container > *:nth-child(2) {
+    flex: 1 1 40%;
+}
+
+#user-info {
+    display: flex;
+    gap: 2em;
+}
+
+#shipping-info hr {
+    margin: 15px 0;
+    border: 1px solid var(--light-grey);
+}
+
+#shipping-info p {
+    columns: var(--very-darker-gray);
+}
+
+.checkout-container .left .form-field {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.checkout-container .left .form-field .form-control {
+    width: 100%;
+}
+
+form input[type="email"],
+form input[type="text"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #c4c4c4;
+    padding: 1em;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+}
+
+#form-button {
+    display: block;
+    width: 100%;
+    background: var(--very-dark-gray);
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease 0s;
+}
+
+#form-button:hover {
+    background: var(--light-red);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.sume-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.sume-items li {
+    list-style: none;
+}

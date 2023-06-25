@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+:root {
+    --small-text-fonts: 'Lato', sans-serif;
+    --title-text-fonts: 'Merriweather', serif;
+    --very-dark-gray: #404040; /* For Button */
+    --light-red: #ff6162; /* Hover */
+    --very-darker-gray: #333333; /* Links */
+}
+
+.detail-container {
+    display: flex;
+    margin-top: 40px;
+}
+
+.detail-container > *:nth-child(1) {
+    flex: 1 1 50%;
+}
+
+.detail-container > *:nth-child(2) {
+    flex: 1 1 50%;
+}
+
+.left-img {
+    display: flex;
+    justify-content: center;
+}
+
+.left-img img {
+    width: 300px;
+    height: 445px;
+}
+
+.author-d,
+.price-d,
+.category-d,
+.condition-d,
+.description-d {
+    font-family: var(--small-text-fonts);
+    margin: 20px 0;
+    font-weight: 600;
+    color: var(--very-dark-gray);
+}
+
+.name-d {
+    font-family: var(--title-text-fonts);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.price-d {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--light-red);
+}
+
+.right-detail .add-btn {
+    width: 9em;
+    float: left;
+}
